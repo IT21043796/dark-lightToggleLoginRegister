@@ -1,0 +1,47 @@
+
+.toggle-container{
+    position: absolute;
+    top:-3.5em;
+    right:-1em;
+}
+
+.toggle{
+    visibility: hidden;
+}
+
+.toggle + label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--primary-text-color);
+    background-image: url("../../Resources/lightlight.png");
+}
+
+.toggle + label::before {
+    background-image: url("../../Resources/lightlight.png");
+    content:"";
+    height: 2em;
+    width: 4em;
+    border-radius: 1em;
+    background-color: var(--toggle-b);
+    margin-right:0.5em;
+    transition: background-color 500ms ease-in-out;
+}
+
+.toggle + label::after {
+    background-image: url("../../Resources/lightlight.png"); /* Use url() instead of image() */
+    content:"";
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 1em;
+    background-color: var(--toggle-g);
+    position: absolute;
+    left: 1.2em;
+    transition: background-color 500ms ease-in-out;
+    transition: margin-right 2000ms ease-in-out;
+}
+
+.toggle:checked + label::after{
+    transform: translateX(100%);
+}
